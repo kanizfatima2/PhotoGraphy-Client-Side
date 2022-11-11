@@ -1,10 +1,32 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './Authentication/AuthProvider';
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext)
+    //SignOut
+    const handleSignOut = () => {
+        logout()
+            .then(() => {
+
+            })
+            .catch(error => console.error(error))
+    }
 
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
+        {
+            user?.email ?
+                <>
+                    <li className='font-semibold'><Link to='/myreviews'>My Reviews</Link></li>
+                    <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
+                    <li onClick={handleSignOut} className='font-semibold'><Link to='/'>Logout</Link></li></>
+
+                : <li className='font-semibold'><Link to='/login'>Login</Link></li>
+        }
+
 
 
     </>
@@ -30,8 +52,21 @@ const Header = () => {
 
                 </div>
                 <div className="navbar-end">
+                    {
+                        user?.displayName ?
+                            <><p className='text-semibold mr-2'>{user.displayName}</p></> :
+                            <p></p>
+                    }
                     <div className="w-10 rounded-full">
-                        <img src="https://placeimg.com/80/80/people" alt="wait" ></img>
+
+                        {
+                            user?.photoURL ?
+                                <>
+                                    <img src={user.photoURL} alt="wait" ></img></>
+                                : <p></p>
+                        }
+
+
                     </div>
                 </div>
             </div>

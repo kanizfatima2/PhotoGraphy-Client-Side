@@ -1,6 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../Authentication/AuthProvider';
 
 const AllServiceDetails = ({ service }) => {
+
+    const { user } = useContext(AuthContext)
 
     const { img, price, title, description, rating, _id } = service;
     return (
@@ -16,7 +21,14 @@ const AllServiceDetails = ({ service }) => {
                         <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
                         <p className="text-gray-900">{description.slice(0, 50) + "..."}</p>
                     </div>
-                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-700 text-gray-200">View Details</button>
+                    <Link to={`/singleservice/${_id}`} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-700 text-gray-200">View Details</Link>
+                    {
+                        user?.email ?
+                            <>
+                                <Link to={`/singleservice/${_id}`} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-700 text-gray-200">Add Service</Link></>
+                            : <></>
+                    }
+
                 </div>
             </div>
         </div>

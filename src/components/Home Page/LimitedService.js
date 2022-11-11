@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LimitedService = ({ service }) => {
     const { img, price, title, description, rating, _id } = service;
@@ -15,7 +16,7 @@ const LimitedService = ({ service }) => {
                         <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
                         <p className="text-gray-900">{description.slice(0, 50) + "..."}</p>
                     </div>
-                    <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-700 text-gray-200">View Details</button>
+                    <Link to={`/singleservice/${_id}`} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-700 text-gray-200">View Details</Link>
                 </div>
             </div>
         </div>

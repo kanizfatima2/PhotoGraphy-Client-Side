@@ -12,7 +12,7 @@ const Services = () => {
             .then(data => setService(data.data))
 
     }, [])
-    const sev = (service.slice(0, 3))
+    const sev = service.slice(0, 3)
     return (
         <div>
 
