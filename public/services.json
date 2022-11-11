@@ -1,0 +1,50 @@
+[
+    {
+        "service_id": "01",
+        "title": "Couple",
+        "img": "https://weddingdiary.com.bd/wp-content/uploads/2022/02/05.-emotion-of-the-day-01.jpg",
+        "price": 40000,
+        "rating": 4.5,
+        "description": "Once in awhile, right in the middle of an ordinary life, love gives us a fairy tale.And I knew exactly how old Walt Disney’s Cinderella felt when she found her prince.A hundred hearts would be too few to carry all my love for you.In the arithmetic of love, one plus one equals everything, and two minus one equals nothing.The highest happiness on earth is the happiness of marriage."
+    },
+    {
+        "service_id": "02",
+        "title": "Portrait",
+        "img": "https://weddingdiary.com.bd/wp-content/uploads/2022/03/01.-Full-day-coverage-04.jpg",
+        "price": 60000,
+        "rating": 4.3,
+        "description": "Nobody has ever measured, even poets, how much a heart can hold.Gravitation is not responsible for people falling in love.Oh the heart that has truly loved never forgets, But as truly loves on to the close.Doubt thou the stars are fire; Doubt that the sun doth move; Doubt truth to be a liar; But never doubt I love.I would rather share one lifetime with you than face all the ages of this world alone."
+    },
+    {
+        "service_id": "03",
+        "title": "Wedding",
+        "img": "https://weddingdiary.com.bd/wp-content/uploads/2022/02/05.-emotion-of-the-day-03.jpg",
+        "price": 100000,
+        "rating": 4.9,
+        "description": "Being someone’s first love may be great, but to be their last is beyond perfect.Keep love in your heart. A life without it is like a sunless garden when the flowers are.You are every reason, every hope and every dream I’ve ever had.You don’t love someone for their looks, or their clothes or their fancy car, but because they sing a song only you can hear."
+    },
+    {
+        "service_id": "04",
+        "title": "Wedding Films",
+        "img": "https://weddingdiary.com.bd/wp-content/uploads/2022/02/02.-an-eye-witness-of-the-day-01-.jpg",
+        "price": 80000,
+        "rating": 4.8,
+        "description": "If we look at the world with a love of life, the world will reveal its beauty to us.Soul meets soul on lovers’ lips.What lies behind us, and what lies before us are tiny matters compared to what lies within us.Being someone’s first love may be great, but to be their last is beyond perfect."
+    },
+    {
+        "service_id": "05",
+        "title": "Engagement",
+        "img": "https://weddingdiary.com.bd/wp-content/uploads/2022/02/02.an-eye-witness-of-the-day-04.jpg",
+        "price": 70000,
+        "rating": 4.9,
+        "description": "You know when you have found your prince because you not only have a smile on your face, but in your heart as well.or you see, each day I love you more today more than yesterday and less than tomorrow.And I knew exactly how old Walt Disney’s Cinderella felt when she found her prince.When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+    },
+    {
+        "service_id": "06",
+        "title": "360 D",
+        "img": "https://i1.wp.com/www.affinityvr.com/wp-content/uploads/2018/02/pier_39_carroussel_correct_position-1612x806.jpg",
+        "price": 1200000,
+        "rating": 4.9,
+        "description": "For it was not into my ear you whispered, but into my heart. It was not my lips you kissed, but my soul.Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.Walking with your hands in mine and mine in yours, that’s exactly where I want to be always.ou don’t marry the person you can live with—you marry the person you can’t live without."
+    }
+]
