@@ -40,27 +40,27 @@ export const router = createBrowserRouter([
             {
                 path: '/allservice',
                 element: <AllService></AllService>,
-                loader: () => fetch(`http://localhost:5000/services`)
+                loader: () => fetch(`https://assignment-11-server-ten-ochre.vercel.app/services`)
             },
             {
                 path: '/singleservice/:id',
                 element: <SingleService></SingleService>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-ten-ochre.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addservice',
                 element: <AddService></AddService>,
-                loader: () => fetch(`http://localhost:5000/services`)
+                loader: () => fetch(`https://assignment-11-server-ten-ochre.vercel.app/services`)
             },
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-ten-ochre.vercel.app/services/${params.id}`)
             },
             {
                 path: '/reviews/:id',
                 element: <PrivateRoute><Reviews></Reviews></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-ten-ochre.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myreviews',

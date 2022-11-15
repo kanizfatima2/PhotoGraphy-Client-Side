@@ -30,7 +30,7 @@ const SingleService = () => {
 
     const [review, setReview] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://assignment-11-server-ten-ochre.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => setReview(data.data))
 

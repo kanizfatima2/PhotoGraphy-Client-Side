@@ -39,7 +39,7 @@ const Checkout = () => {
             alert('Please Provide a valid number!')
         }
         else {
-            fetch('http://localhost:5000/newService', {
+            fetch('https://assignment-11-server-ten-ochre.vercel.app/newService', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

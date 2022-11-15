@@ -15,7 +15,7 @@ const EditReview = () => {
 
     // Get the Data 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${id}`)
+        fetch(`https://assignment-11-server-ten-ochre.vercel.app/reviews/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -41,7 +41,7 @@ const EditReview = () => {
 
         }
 
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://assignment-11-server-ten-ochre.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
