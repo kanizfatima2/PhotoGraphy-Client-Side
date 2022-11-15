@@ -1,10 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../Routes/useTitle';
 
 import { AuthContext } from './AuthProvider';
 
 const Signup = () => {
+    useTitle('SignUp')
 
     const { createUser } = useContext(AuthContext)
 
@@ -38,7 +40,7 @@ const Signup = () => {
                     <form onSubmit={handleSignup} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="name" className="input input-bordered" required />
                         </div>

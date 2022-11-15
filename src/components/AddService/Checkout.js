@@ -1,10 +1,14 @@
 import React from 'react';
 import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { toast } from 'react-toast';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../Authentication/AuthProvider';
+import useTitle from '../Routes/useTitle';
 
 const Checkout = () => {
+    useTitle('Checkout')
+
     const loadedData = useLoaderData();
     const { user } = useContext(AuthContext)
     const { _id, title, img, price, description } = loadedData.data;
@@ -45,8 +49,10 @@ const Checkout = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.success) {
-                        toast.success(data.message)
-                        alert('Successfully you booked your Package')
+                        toast.success(data.message, {
+                            position: toast.POSITION.TOP_RIGHT
+                        });
+
                         form.reset()
                     }
                 })
@@ -73,6 +79,7 @@ const Checkout = () => {
 
                 <div class="flex items-center">
                     <input className="btn btn-warning mb-5" type="submit" value="Please Book your Package" />
+                    <ToastContainer />
                 </div>
             </form>
         </div>

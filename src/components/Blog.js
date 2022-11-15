@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from './Routes/useTitle';
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div>
             <section className="bg-gray-800 text-gray-100">

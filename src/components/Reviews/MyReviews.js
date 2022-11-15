@@ -1,8 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
 import ReviewDetails from './ReviewDetails';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../Routes/useTitle';
 
 const MyReviews = () => {
+    useTitle('My Reviews')
+
     const { user } = useContext(AuthContext)
     const [review, setReview] = useState({})
 
@@ -13,7 +18,7 @@ const MyReviews = () => {
             .then(data => setReview(data.data))
     }, [user?.email])
 
-    //Delete order
+    //Delete Review
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure,you want to delete?');
         if (proceed) {
@@ -23,7 +28,9 @@ const MyReviews = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.success) {
-                        alert(data.message)
+                        toast.success(data.message, {
+                            position: toast.POSITION.TOP_RIGHT
+                        });
                         const remaining = review.filter(odr => odr._id !== id)
                         setReview(remaining)
                     }

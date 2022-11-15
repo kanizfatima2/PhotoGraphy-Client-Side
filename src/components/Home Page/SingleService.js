@@ -1,10 +1,40 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../Authentication/AuthProvider';
+import SingleServiceReview from '../Reviews/SingleServiceReview';
+import useTitle from '../Routes/useTitle';
 
 const SingleService = () => {
+
+    useTitle('Service Details')
+    const { user } = useContext(AuthContext)
     const loadeddata = useLoaderData();
     const data = loadeddata.data;
     const { img, title, rating, price, description, _id } = data
+
+    const handleUser = (user) => {
+        if (user === null) {
+            toast.success('Please Login !', {
+                position: toast.POSITION.TOP_RIGHT
+            });
+
+        }
+
+
+    }
+
+    const [review, setReview] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/${_id}`)
+            .then(res => res.json())
+            .then(data => setReview(data.data))
+
+    }, [])
     return (
         <div>
             <div className='grid grid-cols-1  mt-12 mb-12'>
@@ -25,9 +55,15 @@ const SingleService = () => {
             </div>
 
             <div className='flex content-center justify-center mb-12'>
-                <Link to={`/reviews/${_id}`} className=" px-10 py-3 text-lg font-medium rounded-3xl bg-orange-400 text-gray-900">Add Review</Link>
-                <Link to={`/checkout/${_id}`} className=" px-10 py-3 text-lg font-medium rounded-3xl bg-violet-400 text-gray-900 ml-2">Add Service</Link>
+                <Link onClick={() => handleUser(user)} to={`/reviews/${_id}`} className=" px-10 py-3 text-lg font-medium rounded-3xl bg-orange-400 text-gray-900">Add Review</Link>
+                <Link onClick={() => handleUser(user)} to={`/checkout/${_id}`} className=" px-10 py-3 text-lg font-medium rounded-3xl bg-violet-400 text-gray-900 ml-2">Add Service</Link>
+                <ToastContainer />
             </div>
+
+            {/* //Read Review  */}
+            {
+                review.map(r => <SingleServiceReview key={r._id} rev={r}></SingleServiceReview>)
+            }
         </div>
     );
 };

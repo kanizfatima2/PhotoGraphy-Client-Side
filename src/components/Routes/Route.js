@@ -12,6 +12,7 @@ import Reviews from '../Reviews/Reviews'
 import AddService from "../AddService/AddService";
 import Checkout from '../AddService/Checkout'
 import MyReviews from "../Reviews/MyReviews";
+import EditReview from "../Reviews/EditReview";
 
 export const router = createBrowserRouter([
     {
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/singleservice/:id',
-                element: <PrivateRoute><SingleService></SingleService></PrivateRoute>,
+                element: <SingleService></SingleService>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path: '/myreviews',
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            },
+            {
+                path: '/editreview',
+                element: <PrivateRoute><EditReview></EditReview></PrivateRoute>
             }
 
         ]

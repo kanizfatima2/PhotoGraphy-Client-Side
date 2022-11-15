@@ -24,7 +24,9 @@ const Header = () => {
                     <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
                     <li onClick={handleSignOut} className='font-semibold'><Link to='/'>Logout</Link></li></>
 
-                : <li className='font-semibold'><Link to='/login'>Login</Link></li>
+                : <>
+                    <li className='font-semibold'><Link to='/login'>Login</Link></li>
+                    <li className='font-semibold'><Link to='/signup'>Sign Up</Link></li></>
         }
 
 
@@ -55,7 +57,7 @@ const Header = () => {
                     {
                         user?.displayName ?
                             <><p className='text-semibold mr-2'>{user.displayName}</p></> :
-                            <p></p>
+                            <><p className='text-semibold mr-2'>{user?.email}</p></>
                     }
                     <div className="w-10 rounded-full">
 

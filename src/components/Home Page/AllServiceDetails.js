@@ -2,6 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Authentication/AuthProvider';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const AllServiceDetails = ({ service }) => {
 
@@ -11,7 +13,14 @@ const AllServiceDetails = ({ service }) => {
     return (
         <div>
             <div className="max-w-xs rounded-md shadow-md bg-gray-200 text-gray-900 h-full">
-                <img src={img} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
+                {/* <img src={img} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" /> */}
+
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <img src={img} style={{ objectFit: 'cover' }} alt="" />
+                    </PhotoView>
+                </PhotoProvider>
+
                 <div className='flex justify-between pt-3 pb-0 px-6 '>
                     <p className='font-semibold'>{rating}</p>
                     <h3 className='font-bold text-orange-600 text-xl'>${price}</h3>
@@ -25,7 +34,7 @@ const AllServiceDetails = ({ service }) => {
                     {
                         user?.email ?
                             <>
-                                <Link to={`/singleservice/${_id}`} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-700 text-gray-200">Add Service</Link></>
+                                <Link to={`/checkout/${_id}`} type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-orange-700 text-gray-200">Add Service</Link></>
                             : <></>
                     }
 
