@@ -1,5 +1,5 @@
 import React from 'react';
-import AllService from '../Home Page/AllService'
+import AllService from '../Home Page/AllService';
 
 
 const AddService = () => {
